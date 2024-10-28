@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["Test Backend"]
     branches:
-      - main
+      [main]
     types:
       - completed
 
