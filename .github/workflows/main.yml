@@ -19,11 +19,7 @@ jobs:
           distribution: 'corretto'
 
       - name: Build, test, and SonarCloud analysis
-        run: |
-          mvn clean verify sonar:sonar \
-          -Dsonar.projectKey=Rostova0_devops-livecoding \
-          -Dsonar.organization=rostova0 \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./simple-api/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=Rostova0_devops-livecoding -Dsonar.organization=rostova0 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
 
   build-and-push-docker-image:
     needs: test-backend
