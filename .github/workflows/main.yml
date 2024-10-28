@@ -44,7 +44,7 @@ jobs:
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
-          context: ./path-to-your-database
+          context: ./database
           tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-database:latest
           push: true
 
@@ -52,6 +52,6 @@ jobs:
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
-          context: ./path-to-your-httpd
-          tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-httpd:latest
+          context: ./http-server
+          tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-http-server:latest
           push: true
