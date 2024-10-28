@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin' # You can use 'zulu' or others as well
+          distribution: 'corretto' # You can use 'zulu' or others as well
 
       # Build and test the app with Maven
       - name: Build and test with Maven
